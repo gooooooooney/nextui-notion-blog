@@ -52,7 +52,7 @@ export const BlogCard = ({ blog }: BlogProps) => {
             </time>
             <Tags hrefPrefix="/tag" tags={getTags(properties.category)} />
           </div>
-          <div className="group relative max-w-xl mt-2">
+          <div className="group relative mt-2">
             <h3 className={cn(title({ size: "xs" }))}>
               <NextLink href={`/article/${blog.id}`}>
                 <span className="absolute inset-0" />
@@ -60,7 +60,7 @@ export const BlogCard = ({ blog }: BlogProps) => {
               </NextLink>
             </h3>
 
-            <Text title={getPlainText(properties.description)} className="mt-5 line-clamp-3">{getPlainText(properties.description)}</Text>
+            <Text title={getPlainText(properties.description)} className="mt-5 line-clamp-2">{getPlainText(properties.description)}</Text>
           </div>
           <Divider orientation="horizontal" className="mt-6" />
           <div className="mt-6 flex ">
