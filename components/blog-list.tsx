@@ -4,7 +4,7 @@ import { title } from "@/components/primitives";
 import { BlogCard } from "./blog-card";
 
 export type BlogProps = {
-  blogs: PageObjectResponse[];
+  blogs?: PageObjectResponse[];
   titleName?: string;
   desc?: string;
 };
@@ -21,7 +21,7 @@ export const BlogList = ({ blogs, titleName = "Story", desc = "Personal blog" }:
             </p>
           </>
           <div className="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-            {blogs.map((blog) => (
+            {blogs?.map((blog) => (
               <BlogCard blog={blog} key={blog.id} />
             ))}
           </div>

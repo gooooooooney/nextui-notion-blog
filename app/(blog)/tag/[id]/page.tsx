@@ -14,7 +14,7 @@ type TagPageProps = {
 const TagPage = async ({ params: { id } }: TagPageProps) => {
   const database = await NotionService.getDatabase();
   let tagName = "";
-  const blogs = (database.results as PageObjectResponse[]).filter((blog) => {
+  const blogs = (database?.results as PageObjectResponse[]).filter((blog) => {
     const categories = getTags(blog.properties?.category);
     return categories?.some((tag) => {
       if (tag.id === id) {

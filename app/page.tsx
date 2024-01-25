@@ -8,7 +8,7 @@ export default async function Home() {
 
 	return (
 		<Container>
-			<BlogList titleName="Blog" blogs={database.results as PageObjectResponse[]} />
+			<BlogList titleName="Blog" blogs={database?.results as PageObjectResponse[]} />
 		</Container>
 	);
 }
