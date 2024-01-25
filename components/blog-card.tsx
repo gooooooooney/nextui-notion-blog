@@ -45,7 +45,7 @@ export const BlogCard = ({ blog }: BlogProps) => {
           className="absolute inset-0 diagonal-object-position  transform hover:scale-125 h-full w-full rounded-2xl bg-gray-50   object-cover "
         />
 
-        <div>
+        <div className="w-full">
           <div className="flex items-center gap-x-4 text-xs">
             <time dateTime={blog.created_time} className="text-gray-500">
               {dateFormat(blog.created_time)}
