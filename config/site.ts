@@ -1,8 +1,12 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-	name: "Next.js + NextUI",
-	description: "Make beautiful websites regardless of your design experience.",
+	name: "Gooney's Blog",
+	description: "A blog about software development and other cool stuff.",
+	keywords: "blog, software, development, javascript, typescript, react, nextjs, notion, gooney",
+	icons: {
+    shortcut: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍃</text></svg>",
+  },
 	navItems: [
 		{
 			label: "Home",

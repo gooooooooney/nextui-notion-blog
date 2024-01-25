@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes objectMoveDiagonal {
+  0% {
+    object-position: top left;
+  }
+  100% {
+    object-position: bottom right;
+  }
+}
+
+/* 应用到图片上的类 */
+.diagonal-object-position {
+  /* 保证图片尺寸大于容器，以看到动画效果 */
+  width: 100%;
+  height: 100%;
+
+  /* 使用object-fit和object-position组合展示图片的指定部分 */
+  object-fit: cover;
+  object-position: top left;
+
+  /* 应用动画 */
+  animation: objectMoveDiagonal 30s infinite alternate linear;
+}

@@ -1,0 +1,6 @@
+.react-player {
+  @apply rounded-md shadow-2xl
+}
+.react-player video {
+  @apply rounded-md
+}

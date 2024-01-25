@@ -5,9 +5,10 @@ import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import {useIsSSR} from "@react-aria/ssr";
-import clsx from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { cn } from "@/lib/utils";
+import { button } from "@nextui-org/theme";
 
 export interface ThemeSwitchProps {
 	className?: string;
@@ -41,7 +42,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 	return (
 		<Component
 			{...getBaseProps({
-				className: clsx(
+				className: cn(
 					"px-px transition-opacity hover:opacity-80 cursor-pointer",
 					className,
 					classNames?.base
@@ -54,7 +55,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 			<div
 				{...getWrapperProps()}
 				className={slots.wrapper({
-					class: clsx(
+					class: cn(
 						[
 							"w-auto h-auto",
 							"bg-transparent",
@@ -65,6 +66,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 							"pt-px",
 							"px-0",
 							"mx-0",
+							button({size: "sm", isIconOnly: true, variant: "light"}),
 						],
 						classNames?.wrapper
 					),
