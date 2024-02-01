@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
 
 import { ImageBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { getMediaUrl } from "@/lib/notion/guard/block-guard";
@@ -37,7 +35,9 @@ export const RenderImage = ({ block }: RenderImageProps) => {
           wrapper: " !max-w-none w-full overflow-hidden",
         }}
         alt={block.image.caption?.[0]?.plain_text || "image"}
-        onClick={() => setBlockId(block.id)}
+        onClick={() => {
+          setBlockId(src)
+        }}
 
       />
     </div>

@@ -30,7 +30,6 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   return {
     title: p?.properties.title.type == PAGE_TYPES.TITLE ? p?.properties.title.title[0]?.plain_text : 'notion with nextjs',
     keywords,
-    viewport: 'width=device-width, initial-scale=1.0, user-scalable=no,minimum-scale=1.0, maximum-scale=1.0',
     description,
     icons: {
       shortcut: getShortcutIcon(p?.icon?.type === PAGE_TYPES.EMOJI && p.icon.emoji || "🐠"),

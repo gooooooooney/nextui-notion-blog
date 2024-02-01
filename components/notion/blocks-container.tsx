@@ -133,8 +133,10 @@ export const BlocksContainer = ({ initialBlocks }: BlocksContainerProps) => {
       ]
     }
   });
-  return <>
-    {renderBlocks(initialBlocks)}
-    <ImageLightbox slides={slides} />
-  </>;
+  return (
+    <>
+      {renderBlocks(initialBlocks)}
+      <ImageLightbox slides={slides} />
+    </>
+  );
 };
