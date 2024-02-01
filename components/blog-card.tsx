@@ -67,9 +67,10 @@ export const BlogCard = ({ blog }: BlogProps) => {
             <User
               name={author}
               description={(
-                <Link href={`mailto:${getPlainText(properties.author_desc) || UserInfo.desc}`} isExternal>
-                  {getPlainText(properties.author_desc) || UserInfo.desc}
-                </Link>
+                getPlainText(properties.author_desc) ? (getPlainText(properties.author_desc)) :
+                  <Link href={`mailto:${UserInfo.desc}`} isExternal>
+                    {UserInfo.desc}
+                  </Link>
               )}
               avatarProps={{
                 isBordered: true,

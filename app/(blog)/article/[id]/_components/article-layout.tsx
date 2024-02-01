@@ -51,7 +51,7 @@ export const ArticleLayout = ({ page, children }: ArticleProps) => {
             time={dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}
             userAvatar={getFiles(properties.author_avatar)?.[0] || UserInfo.avatar}
             userName={getPlainText(properties.author) || UserInfo.name}
-            userDesc={getSelect(properties.author_title)?.name || UserInfo.desc}
+            userDesc={getPlainText(properties.author_desc) || UserInfo.desc}
           />
           <Prose className="mt-8 w-full" data-mdx-content>
             {children}
