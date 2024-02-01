@@ -4,7 +4,7 @@ import { NotionService } from '@/services/notion.service';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { ArticleLayout } from './_components/article-layout';
 
-const Layout =  async ({
+const Layout = async ({
   children,
   params
 }: {
@@ -18,11 +18,11 @@ const Layout =  async ({
 
   return (
     <>
-    <ArticleLayout
-      page={page}
-    >
-      {children}
-    </ArticleLayout>
+      <ArticleLayout
+        page={page}
+      >
+        {children}
+      </ArticleLayout>
     </>
   )
 }
