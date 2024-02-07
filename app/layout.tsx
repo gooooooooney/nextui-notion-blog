@@ -51,14 +51,15 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 
 					<div className="relative flex flex-col h-screen">
+						<Background />
+
 						<Header
 							navbarProps={{
 								// shouldHideOnScroll: true,
 								maxWidth: "2xl",
 							}}
 						/>
-						<main className="w-full  flex-grow">
-							<Background />
+						<main className=" w-full  flex-grow">
 							<Spotlight />
 							{children}
 							<Toaster position="bottom-center" />
