@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Toaster } from 'sonner';
 import Header from "@/components/navbar/header";
 import { Inter } from 'next/font/google'
+import { Background } from "@/components/background";
 
 const fontSans = Inter({
 	subsets: ["latin"],
@@ -42,24 +43,25 @@ export default function RootLayout({
 			<head />
 			<body
 				className={cn(
-					"min-h-screen bg-background font-sans antialiased",
+					"min-h-screen  font-sans antialiased",
 					fontSans.variable
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+
 					<div className="relative flex flex-col h-screen">
 						<Header
-							navbarProps={{
-								maxWidth: "2xl",
-								position: "sticky",
-								shouldHideOnScroll: true,
-							}}
+						navbarProps={{
+							// shouldHideOnScroll: true,
+							maxWidth: "2xl",
+						}}
 						/>
 						<main className="w-full  flex-grow">
+							<Background />
+
 							{children}
 							<Toaster position="bottom-center" />
 						</main>
-
 					</div>
 				</Providers>
 			</body>

@@ -27,9 +27,9 @@ export default function Header({ navbarProps }: HeaderProps) {
           src={UserInfo.avatar}
         />
       </NavbarBrand>
-      <NavbarContent className=" flex gap-4" justify="center">
+      {/* <NavbarContent className=" flex gap-4" justify="center">
         <Search />
-      </NavbarContent>
+      </NavbarContent> */}
       <NavbarContent justify="end">
         <NavbarItem>
           <Link as={NextLink} color="foreground" href="/">
