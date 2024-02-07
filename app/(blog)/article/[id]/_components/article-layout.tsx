@@ -16,6 +16,7 @@ import { getCoverUrl } from "@/lib/notion/guard/cover-guard";
 import { ArticleHeader } from "./header";
 import { Fire } from "@/components/fire";
 import { UserInfo } from "@/lib/constants";
+import { TracingBeam } from "@/components/tracing-beam";
 
 type ArticleProps = {
   page: PageObjectResponse;
@@ -43,24 +44,31 @@ export const ArticleLayout = ({ page, children }: ArticleProps) => {
         className="absolute inset-0 diagonal-object-position rounded-b-sm object-cover "
       />
 
+
       <Container className="mt-8 lg:mt-10">
-        <article className="flex flex-col justify-center items-center">
-          <ArticleHeader
-            tags={getTags(properties.category)}
-            titleName={name}
-            time={dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}
-            userAvatar={getFiles(properties.author_avatar)?.[0] || UserInfo.avatar}
-            userName={getPlainText(properties.author) || UserInfo.name}
-            userDesc={getPlainText(properties.author_desc) || UserInfo.desc}
-          />
-          <Prose className="mt-8 w-full" data-mdx-content>
-            {children}
-          </Prose>
-        </article>
+        <TracingBeam>
+          <article className="flex flex-col justify-center items-center">
+            <ArticleHeader
+              tags={getTags(properties.category)}
+              titleName={name}
+              time={dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}
+              userAvatar={getFiles(properties.author_avatar)?.[0] || UserInfo.avatar}
+              userName={getPlainText(properties.author) || UserInfo.name}
+              userDesc={getPlainText(properties.author_desc) || UserInfo.desc}
+            />
+            <Prose className="mt-8 w-full" data-mdx-content>
+              {children}
+            </Prose>
+
+          </article>
+        </TracingBeam>
         <div className="text-center py-16 sm:pt-32 sm:pb-auto">
           <Fire />
         </div>
+
       </Container>
+
+
     </div>
   );
 };

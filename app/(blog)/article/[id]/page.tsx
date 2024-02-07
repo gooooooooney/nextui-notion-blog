@@ -2,7 +2,6 @@ import { BlocksContainer } from '@/components/notion/blocks-container';
 import { PAGE_TYPES } from '@/lib/notion/types';
 import { NotionService } from '@/services/notion.service';
 import { Metadata } from 'next';
-import React from 'react'
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const p = await NotionService.getPage(params.id)!;
@@ -47,7 +46,9 @@ const ArticlePage = async ({ params }: ArticlePageProps) => {
   const { id } = params;
   const blocks = await NotionService.getBlocks(id);
   return (
+
     <BlocksContainer initialBlocks={blocks} />
+
   )
 }
 

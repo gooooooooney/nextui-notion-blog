@@ -7,6 +7,7 @@ import { Toaster } from 'sonner';
 import Header from "@/components/navbar/header";
 import { Inter } from 'next/font/google'
 import { Background } from "@/components/background";
+import { Spotlight } from "@/components/spotlight";
 
 const fontSans = Inter({
 	subsets: ["latin"],
@@ -51,14 +52,14 @@ export default function RootLayout({
 
 					<div className="relative flex flex-col h-screen">
 						<Header
-						navbarProps={{
-							// shouldHideOnScroll: true,
-							maxWidth: "2xl",
-						}}
+							navbarProps={{
+								// shouldHideOnScroll: true,
+								maxWidth: "2xl",
+							}}
 						/>
 						<main className="w-full  flex-grow">
 							<Background />
-
+							<Spotlight />
 							{children}
 							<Toaster position="bottom-center" />
 						</main>

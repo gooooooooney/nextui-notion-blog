@@ -1,6 +1,9 @@
 import typographyPlugin from "@tailwindcss/typography";
 import { type Config } from "tailwindcss";
 import { nextui } from "@nextui-org/theme"
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 export default {
   content: [
@@ -23,6 +26,16 @@ export default {
             transform: "translateX(100%) translateY(100%);"
           }
         },
+        spotlight: {
+          "0%": {
+            opacity: '0',
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: '1',
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
         swing: {
           "0%": { transform: "rotate(0deg)" },
           "10%": { transform: "rotate(10deg)" },
@@ -39,6 +52,7 @@ export default {
       animation: {
         "image-diagonal-slide": "imageDiagonalSlide 40s linear infinite",
         swing: "swing 2s ease-in-out infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
     },
     // typography: typographyStyles,
@@ -66,5 +80,18 @@ export default {
       },
     }),
     typographyPlugin(),
+    addVariablesForColors,
   ],
 } satisfies Config;
+
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}

@@ -1,6 +1,5 @@
 import { BlockObjectResponse, ImageBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import React from "react";
-import { Prose } from "./prose/Prose";
 import { BlockRenderer } from "./block_renderer";
 import { BLOCK_TYPES } from "@/lib/notion/types";
 import { getMediaUrl, getParentPage } from "@/lib/notion/guard/block-guard";
@@ -135,6 +134,7 @@ export const BlocksContainer = ({ initialBlocks }: BlocksContainerProps) => {
   });
   return (
     <>
+      
       {renderBlocks(initialBlocks)}
       <ImageLightbox slides={slides} />
     </>
