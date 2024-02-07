@@ -40,6 +40,7 @@ export const BlockRenderer = ({ block, nestedLevel }: BlockRendererProps) => {
               {/* @ts-expect-error Async Server Component */ }
               return <NumberedList nestedLevel={nestedLevel} block={block} />
             case BLOCK_TYPES.CODE:
+              {/* @ts-expect-error Async Server Component */ }
               return <Code block={block} />
             case BLOCK_TYPES.QUOTE:
               return <BlockQuote block={block} />
