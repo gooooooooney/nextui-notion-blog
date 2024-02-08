@@ -3,7 +3,7 @@
   margin-top: 0;
 }
 .prose {
-  max-width: 80ch
+  max-width: 100%;
 }
 .prose :where(.prose > ul > li > *:first-child):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   margin-top: 0;

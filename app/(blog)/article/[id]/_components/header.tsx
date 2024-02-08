@@ -3,6 +3,8 @@ import React from 'react'
 import { cn } from '@/lib/utils';
 import { User } from '@nextui-org/user';
 import { Tags } from '@/components/tags';
+import { TagIcon } from '@/components/icons';
+import { Divider } from '@nextui-org/divider';
 
 
 type ShareButtonProps = {
@@ -37,11 +39,13 @@ export const ArticleHeader = ({
         <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
         <span className="ml-3">{time}</span>
       </time>
-      <div className='flex gap-x-2'>
+      <div className='flex items-center gap-x-2'>
+        <TagIcon className='w-5 h-5' />
         <Tags hrefPrefix="/tag" tags={tags} />
       </div>
       <div className='flex flex-col gap-y-4 items-start sm:flex-row  sm:justify-between sm:items-center'>
-        <User
+        <Divider className='w-full' />
+        {/* <User
           name={userName}
           avatarProps={{
             // color: "warning",
@@ -50,7 +54,7 @@ export const ArticleHeader = ({
           }}
           description={userDesc}
 
-        />
+        /> */}
         {/* <ShareButton title={titleName} /> */}
       </div>
     </section>

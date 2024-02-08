@@ -28,24 +28,21 @@ export const ArticleLayout = ({ page, children }: ArticleProps) => {
 
   return (
     <div>
-      <Image
-        as={NextImage}
-        // width={256}
-        // height={256}
-        fill
-        //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        src={getCoverUrl(page.cover)}
-        alt=""
-        radius="none"
-        classNames={{
-          wrapper: "relative overflow-hidden !max-w-none w-full h-80 ",
-        }}
-        className="absolute inset-0 diagonal-object-position rounded-b-sm object-cover "
-      />
-
-
       <Container className="mt-8 lg:mt-10">
-        <article className="flex flex-col justify-center items-center">
+         <Image
+          as={NextImage}
+          // width={256}
+          // height={256}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          src={getCoverUrl(page.cover)}
+          alt=""
+          classNames={{
+            wrapper: "relative !max-w-none overflow-hidden w-full h-96 ",
+          }}
+          className="absolute inset-0  object-cover "
+        />
+        <article className="flex flex-col justify-center mt-6 items-center">
           <ArticleHeader
             tags={getTags(properties.category)}
             titleName={name}
@@ -54,7 +51,7 @@ export const ArticleLayout = ({ page, children }: ArticleProps) => {
             userName={getPlainText(properties.author) || UserInfo.name}
             userDesc={getPlainText(properties.author_desc) || UserInfo.desc}
           />
-          <Prose className="mt-8 w-full" data-mdx-content>
+          <Prose className="mt-6 w-full" data-mdx-content>
             {children}
           </Prose>
 

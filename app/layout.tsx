@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 	},
 	keywords: siteConfig.keywords,
 	description: siteConfig.description,
-	icons: siteConfig.icons,
 };
 
 
