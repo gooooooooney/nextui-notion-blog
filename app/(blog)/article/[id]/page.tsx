@@ -45,6 +45,8 @@ type ArticlePageProps = {
 const ArticlePage = async ({ params }: ArticlePageProps) => {
   const { id } = params;
   const blocks = await NotionService.getBlocks(id);
+
+
   return (
 
     <BlocksContainer initialBlocks={blocks} />

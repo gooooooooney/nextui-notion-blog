@@ -20,9 +20,10 @@ import { UserInfo } from "@/lib/constants";
 type ArticleProps = {
   page: PageObjectResponse;
   children: React.ReactNode;
+  views: number;
 };
 
-export const ArticleLayout = ({ page, children }: ArticleProps) => {
+export const ArticleLayout = ({ page, children, views }: ArticleProps) => {
   const properties = page.properties;
   const name = getTitle(properties.title);
 
@@ -44,6 +45,7 @@ export const ArticleLayout = ({ page, children }: ArticleProps) => {
         />
         <article className="flex flex-col justify-center mt-6 items-center">
           <ArticleHeader
+          views={views}
             tags={getTags(properties.category)}
             titleName={name}
             time={dateFormat(page.created_time, "EEEE, MMM dd, yyyy")}
